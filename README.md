@@ -16,11 +16,9 @@ Train a new machine learning model and compare its performance to that of a base
 
 - Pandas library -  a Python library for data analysis. 
 
-- SQLAlchemy -SQL library for Python
+- TensorFlow and Keras libraries  - build deep learning model.
 
-- hvPlot - visualization library. 
-
-- Voilà library - to deploy the Juypter library as a web application
+- sklearn library to train model and standardize data 
 
 - Jupyter notebook
 ## EVALUATION REPORT 
