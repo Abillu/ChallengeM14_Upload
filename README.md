@@ -80,11 +80,12 @@ Built the ETF portfolio by using SQL joins to combine all the data for each asse
 
 ## ETF financial application deployed to the web
 Below is the ETF analysis deployed as a web application:
+![Actual Retuns vs Strategy Returns SVM model](https://github.com/Abillu/ChallengeM14_Upload/assets/126644613/c7d04591-3016-472d-a49a-284feadc9a91)
+![Actual Retuns vs Strategy Returns 6 months training window](https://github.com/Abillu/ChallengeM14_Upload/assets/126644613/3815aa5b-52a3-444c-8b16-9c840ecb9be8)
+![Actual Retuns vs Strategy Returns SMA windows changed](https://github.com/Abillu/ChallengeM14_Upload/assets/126644613/46abd336-b362-416e-b259-1bcea898b554)
+![Best improved trading algorithm returns](https://github.com/Abillu/ChallengeM14_Upload/assets/126644613/736811bd-aa9a-42ab-b296-9ee9f6e7a47d)
+![Actual Retuns vs Strategy Returns LR model](https://github.com/Abillu/ChallengeM14_Upload/assets/126644613/bdd54453-4df7-4224-a245-26b865a4a8e0)
 
-![Machine Learning Trading Bot](images\Actual Retuns vs Strategy Returns SVM model.PNG)
-![Machine Learning Trading Bot](images\Actual Retuns vs Strategy Returns 6 months training window.PNG)
-![Machine Learning Trading Bot](images\Actual Retuns vs Strategy Returns SMA windows changed.PNG)
-![Machine Learning Trading Bot](images\Best improved trading algorithm returns.PNG)
-![Machine Learning Trading Bot](images\Actual Retuns vs Strategy Returns LR model.PNG)
+
 
 ---
