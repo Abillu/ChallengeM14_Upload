@@ -1,71 +1,17 @@
 # Machine Learning Trading Bot
 
 ## Overview of the Analysis
-* This analysis used a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers. The analysis used a logistic regression model to make decision as  whether to approve or deny a credit application based on customer's  personal information.  
-
-* The data had two groups of loans: `0` (healthy loan)  class  and  `1` (high-risk loan). The former eventually performed well, and the latter eventually defaulted. The goal is to use classification to correctly predict which of these two categories a loan application belongs to.
-*  The original dataset  used to build the logistic regression model (Model 1)  had  total number of 77,536 loans. Out of these 75.036 loans performed well  and 2,500 loans  became high-resk loans.   Resampled dataset had 56,271 loans in each class and this was used to build  Model 2 . 
-* Below are the stages of the machine learning process completed as part of this analysis:
-
-  * Split the Data into Training and Testing Sets using  ```train_test_split()```
-
-  * Created a model with ```LogisticRegression()```
-
-  * Trained  the model with ```model.fit()```
-
-  * Made predictions with ```model.predict()```
-
-  * Evaluated  the model with ```balanced_accuracy_score()```, ```confusion_matrix()``` and ```classification_report_imbalanced()```
+* In this review aims to improve the existing algorithmic trading systems and maintain a firm’s competitive advantage in the market by  enhancing the existing trading signals with machine learning algorithms that can adapt to new data.
 
 
-* Below are the methods used in this analysis:
-  * Used  logistic regression assesses  multiple variables, such as an applicant's income, loan amount, debt_to_income ratio and number of accounts, to arrive at one of two answers: approve or deny the loan application.
-
-  * Oversampled  the data for the minority class `1`  with  RandomOverSampler( ) to enhance the performance of the model; 
-
-## Results
-
-* Machine Learning Model 1:
-  * Accuracy  score 0.95,  meaning that the model can detect 95% of  true positives and true negatives
-
-  * Precision  score for `0` (healthy loan)  class was 1.00  and  for `1` (high-risk loan) class was 0.85,  meaning that  model is  detecting  85% of the loans that were actually going to default
-
-  * Recall scores score for `0` (healthy loan)  class was 0.99  and  for `1` (high-risk loan) class was 0.91,  meaning that the model  correctly clasified 91%  of the truly high risk loans.
-
-
-
-* Machine Learning Model 2:
-  * Accuracy  score 0.99,;
-
-  * Precision  score for `0` (healthy loan)  class was 1.00  and  for `1` (high-risk loan) class was 0.84
-
-  * Recall scores score for `0` (healthy loan)  class was 0.99  and  for `1` (high-risk loan) class was 0.99,
-
-## Summary
-
-The results regarding accuracy of the minority class are actually mixed when comparing the classifiction reports generated from the predictions with the original data versus the predictions with the resampled data. 
-
-First, the accuracy score is higher for the resampled data (0.99 vs 0.95), meaning that the model using resampled data was much better at detecting true positives and true negatives. 
-
-The precision for the `1` (high-risk loan) labels  is marginally higher with the orignal data (0.85) versus the resampled data (0.84) meaning that the original data was slightly better at detecting the users that were actually going to default. 
-
-In terms of the recall, however, the `1` (high-risk loan) class metric using resampled data was much better than the original dataset (0.99 vs 0.91). Meaning that the resampled data correctly clasified a higher percentage of the truly defaulting borrowers. 
-
-All in, the model using resampled data was much better at detecting borrowers who are likely to default than  the model generated using the original, imbalanced  data. 
-
-In this analysis  where the company's priority is  to build a less risky loan book, model 2 is recommended because it has better recall score  for  the '1` (high-risk loan) class than model 1 as it is correctly classfying 99% of the truly high risk loans.
-
-#  Algorithmic Trading Bot
-This is an analysis of ETF data stored in SQL database to establish the performance of a hypothetical fintech ETF that consists of four stocks. The analysis is presented through professionally styled and formatted interactive visualizations and a screenshot of the web application that I created by deploying my Jupyter notebook via the Voilà library. 
 
 ## Methodology and Approach
 
-Used SQL queries with Python, Pandas, and hvPlot to analyze the performance of a single asset from the ETF
+Implement an algorithmic trading strategy that uses machine learning to automate the trade decisions.
 
-Used advanced SQL queries to optimize the efficiency of accessing data from the database.
+Adjust the input parameters to optimize the trading algorithm.
 
-Built the ETF portfolio by using SQL joins to combine all the data for each asset and then evaluated its performance.
-
+Train a new machine learning model and compare its performance to that of a baseline model.
 ## Libraries and Technologies Used
 
 - Pandas library -  a Python library for data analysis. 
@@ -77,14 +23,29 @@ Built the ETF portfolio by using SQL joins to combine all the data for each asse
 - Voilà library - to deploy the Juypter library as a web application
 
 - Jupyter notebook
+## EVALUATION REPORT 
 
-## ETF financial application deployed to the web
-Below is the ETF analysis deployed as a web application:
+Below is evaluation of the models:
+Actual returns vs Strategy Returns using SVM model
 ![Actual Retuns vs Strategy Returns SVM model](https://github.com/Abillu/ChallengeM14_Upload/assets/126644613/c7d04591-3016-472d-a49a-284feadc9a91)
+
+Actual returns vs Strategy Returns -training window increased to 6 months 
 ![Actual Retuns vs Strategy Returns 6 months training window](https://github.com/Abillu/ChallengeM14_Upload/assets/126644613/3815aa5b-52a3-444c-8b16-9c840ecb9be8)
+The   training window was increased to 6 months from the inititial 3 months. This cumulative strategy returns were 180% compared to  returnss under the 3 months training window of ~150% . However during the period 2019 and 2020 the SVM model trading algorithim for the adjusted moel also made decisions that underperformed relative to the actual returns unlike in the original data set where the training algorithim largely overperfomerd relative to the actual returns
+
+Actual returns vs Strategy Returns -2 days short SMA window , 150 days long SMA window
 ![Actual Retuns vs Strategy Returns SMA windows changed](https://github.com/Abillu/ChallengeM14_Upload/assets/126644613/46abd336-b362-416e-b259-1bcea898b554)
+The short SMA window was dereased from 4 days to 2 days to two days and the lond SMA window was increased from 100 days to 150 days. This incerased the overall strategy returns to o~170% compared to the original  SMA windows returns of ~150% 
+
+Best Improved trading algorithm 
 ![Best improved trading algorithm returns](https://github.com/Abillu/ChallengeM14_Upload/assets/126644613/736811bd-aa9a-42ab-b296-9ee9f6e7a47d)
+The best improved SVM model was the one  with 6 months trading data and a  2 days SMA window and 150 days londg SMA window,. the SVM model returns were at 180% compared to the origina model . 
+
+RLogistic Regression Model altertive
 ![Actual Retuns vs Strategy Returns LR model](https://github.com/Abillu/ChallengeM14_Upload/assets/126644613/bdd54453-4df7-4224-a245-26b865a4a8e0)
+
+The logistical regression model model was compared to the orginal SVM model. The SVM moel perfomed better than the logistial model because the LR model made decisons in 2021 thats significantly underperformed relative to the actual returns. 
+
 
 
 
